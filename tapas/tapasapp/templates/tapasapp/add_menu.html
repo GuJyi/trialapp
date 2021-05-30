@@ -1,0 +1,30 @@
+{% extends 'tapasapp/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}<title>Gumagana ba</title>{% endblock %}
+</head>
+<body>
+
+    {% block content %}
+    <h1>Type in Dish Details</h1>
+    <form method="POST" action="{% url 'add_menu' %}">{% csrf_token %}
+        <label for="dname">Dish Name</label>
+        <input type="text" name="dname" id="dname">
+
+        <label for="ctime">Cooking Time</label>
+        <input type="number" name="ctime" id="ctime">
+
+        <label for="ptime">Prep Time</label>
+        <input type="number" name="ptime" id="ptime">
+
+        <input type="submit">
+    </form>
+    {% endblock content %}
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% extends 'tapasapp/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Manage Account</h1>
+
+<h1>{{lia.username}}</h1>
+
+<a href="{% url 'change_password' pk=lia.pk %}" class="btn btn-dark">Change Password</a>
+
+<a href="{% url 'delete_account' pk=lia.pk %}" class="btn btn-danger">Delete Account</a>
+
+<a href="{% url 'view_menu' %}" class="btn btn-primary">Back</a>
+{% endblock %}

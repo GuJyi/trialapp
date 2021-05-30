@@ -1,0 +1,17 @@
+{% extends 'tapasapp/base.html' %}
+{% load static %}
+
+{% block content %}
+    <H1>Signup Page</H1>
+
+    <form action="{% url 'signup' %}" method="POST"> {% csrf_token %}
+        <label for="username">Username: </label>
+        <input type="email" name="username" id="username">
+        <label for="password">Password: </label>
+        <input type="password" name="password" id="password" minlength="8">
+        <input type="submit">
+    </form>
+
+
+
+{% endblock %}

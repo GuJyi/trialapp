@@ -1,0 +1,15 @@
+{% extends 'tapasapp/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>{{d.name}}</h1>
+<p>Cook Time: {{d.cook_time}}</p>
+<p>Prep Time: {{d.prep_time}}</p>
+
+<p>
+    <a href="{% url 'update_dish' pk=d.pk %}" class='btn btn-primary'>Update</a>
+    <a href="{% url 'delete_dish' pk=d.pk %}" class='btn btn-danger'>Delete</a>
+</p>
+
+{% endblock %}

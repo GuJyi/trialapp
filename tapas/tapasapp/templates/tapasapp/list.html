@@ -1,0 +1,34 @@
+{% extends 'tapasapp/base.html' %}
+{% load static %}
+
+
+
+                {% block content %}
+                <a href="{% url 'manage_account' pk=lia.pk %}" class="btn">Manage Account</a>
+                <a href="{% url 'login' %}" class="btn">Logout</a>
+
+                <div class="col-12">
+                    <table class="table table-striped">
+                        <thead>
+                            <th scope="col"> Name </th>
+                            <th scope="col"> Cooking Time </th>
+                            <th scope="col"> Prep Time </th>
+                            <th scope="col"> View Detail </th>
+                            <th scope="col"> Update </th>
+                            <th scope="col"> Delete </th>
+                        </thead>
+                        <tbody>
+                            {% for d in dishes %}
+                            <tr>
+                                <td> {{ d.name }} </td>
+                                <td> {{ d.prep_time }} </td>
+                                <td> {{ d.cook_time }} </td>
+                                <td> <a href="{% url 'view_detail' pk=d.pk %}" class="btn btn-dark">Details</a> </td><td> <a href="{% url 'update_dish' pk=d.pk %}" class="btn btn-primary">Update</a> </td><td> <a href="{% url 'delete_dish' pk=d.pk %}" class="btn btn-danger">Delete</a> </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endblock %}
+
+            
